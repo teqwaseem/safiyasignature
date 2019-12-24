@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta charset="utf-8" />
+        <title>Email Signature Generator</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row mb-5">
+              <div class="col-12">
+                <h1 class="text-center py-5">Email Signature Generator</h1>
+              </div>
+              <div class="col-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="text-center">Please Enter Details</h5>
+                  </div>
+                  <div class="card-body">
+                    <form>
+                      <div class="form-group row">
+                        <label for="compName" class="col-4 col-form-label">Company Name</label>
+                        <div class="col-8">
+                                  <div class="input-group">
+                                    <div class="input-group-prepend">
+                                          <div class="input-group-text">
+                                            <i class="fa fa-building"></i>
+                                          </div>
+                                        </div>
+                                        <input id="compName" name="compName" placeholder="Enter Company Name" type="text" class="form-control" required="required" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="compAddress" class="col-4 col-form-label">Company Address</label>
+                              <div class="col-8">
+                                <textarea id="compAddress" name="compAddress" cols="40" rows="5" class="form-control" required="required"></textarea>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-4 col-form-label" for="empName">Employee Name</label>
+                            <div class="col-8">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">
+                                    <i class="fa fa-address-card"></i>
+                                  </div>
+                                </div>
+                                <input id="empName" name="empName" placeholder="Enter Employee Name Here" type="text" class="form-control" required="required" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="empDesignation" class="col-4 col-form-label">Employee Designation</label>
+                            <div class="col-8">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">
+                                    <i class="fa fa-user-circle"></i>
+                                  </div>
+                                </div>
+                                <input id="empDesignation" name="empDesignation" placeholder="Enter Employee Designation" type="text" class="form-control" required="required" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="empMobile" class="col-4 col-form-label">Employee Mobile</label>
+                              <div class="col-8">
+                                <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                      <i class="fa fa-mobile"></i>
+                                    </div>
+                                  </div>
+                                      <input id="empMobile" name="empMobile" placeholder="Employee Mobile Number" type="text" class="form-control" required="required" />
+                                    </div>
+                                  </div>
+                                </div>
+                          <div class="form-group row">
+                            <label for="empPhone" class="col-4 col-form-label">Employee Phone</label>
+                            <div class="col-8">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">
+                                    <i class="fa fa-phone"></i>
+                                  </div>
+                                </div>
+                                <input id="empPhone" name="empPhone" placeholder="Enter Phone Number" type="text" class="form-control" required="required" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="empMail" class="col-4 col-form-label">Employee Email</label>
+                              <div class="col-8">
+                                <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                      <i class="fa fa-envelope-o"></i>
+                                    </div>
+                                  </div>
+                                  <input id="empMail" name="empMail" placeholder="Enter Employee Email Address" type="text" class="form-control" required="required" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="comWeb1" class="col-4 col-form-label">Website Link 1</label>
+                              <div class="col-8">
+                                  <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text">
+                                        <i class="fa fa-globe"></i>
+                                      </div>
+                                    </div>
+                                    <input id="comWeb1" name="comWeb1" placeholder="Enter Company Website 1" type="text" class="form-control" required="required" />
+                                  </div>
+                                </div>
+                              </div>
+                          <div class="form-group row">
+                            <label for="compWeb2" class="col-4 col-form-label">Website Link 2</label>
+                            <div class="col-8">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">
+                                    <i class="fa fa-globe"></i>
+                                  </div>
+                                </div>
+                                <input id="compWeb2" name="compWeb2" placeholder="Enter Company Website 2" type="text" class="form-control" required="required" />
+                              </div>
+                            </div>
+                          </div>
+                            </form>
+                    </div>
+                    <div class="card-footer">
+                      <button name="submit" type="submit" class="btn btn-primary btn-block"><i class="fa fa-cogs mr-2"></i>Generate Signature</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="card">
+                    <div class="card-header">
+                      <h5 class="text-center">Email Signature</h5>
+                    </div>
+                    <div class="card-body">
+                      <p class="text-center">Please Enter Your Data to Generate Signature</p>
+                    </div>
+                    <div class="card-footer"></div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
