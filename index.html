@@ -198,8 +198,8 @@
                         </div>
                         <div class="card-footer">
                             <div class="btn-group text-center float-right" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-warning"><i class="fa fa-times-circle mr-2"></i>Reset</button>
-                                <button type="button" class="btn btn-danger"><i class="fa fa-times-circle mr-2"></i>Clear All</button>
+                                <button type="button" class="btn btn-warning reset"><i class="fa fa-times-circle mr-2"></i>Reset</button>
+                                <button type="button" class="btn btn-danger clear-all"><i class="fa fa-times-circle mr-2"></i>Clear All</button>
                                 <button type="button" class="btn btn-primary" onclick="copyToClip(document.getElementById('signature-container').innerHTML)"><i class="fa fa-copy mr-2"></i>Copy to Clipboard</button>
                             </div>
                         </div>
@@ -211,6 +211,7 @@
             //jQuery
             $( document ).ready(function() {
                 $('#compAddress').val("Manuelsons Tower, G.H.Road Opposite T P Building, Mananchira, Kozhikode, Kerala 673001");
+                //Generate Signature
                 $('#generate').click(function(e){
                     alert("click");
                     // console.log($('#signature-form').serialize());
@@ -230,6 +231,17 @@
                         // console.log($(this).attr('id'));
                     });
                 });
+
+                //Clear All Fields
+                $(".clear-all").click(function() {
+                    alert("cleared");
+                    $('#signature-form').find("input, textarea").val("");
+                });
+
+                $('.reset').click(function(){
+                    location.reload(true);
+                });
+
             });
 
             //JS to Copy to Clipboard
