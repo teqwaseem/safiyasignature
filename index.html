@@ -23,6 +23,23 @@
                         <div class="card-body">
                             <form id="signature-form">
                                 <div class="form-group row">
+                                    <label class="col-4">Choose Division</label>
+                                    <div class="col-8">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input name="division" id="division_0" type="radio" class="custom-control-input" value="travels" checked="checked" >
+                                        <label for="division_0" class="custom-control-label">Safiya Travels</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input name="division" id="division_1" type="radio" class="custom-control-input" value="online">
+                                        <label for="division_1" class="custom-control-label">Safiya Online</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input name="division" id="division_2" type="radio" class="custom-control-input" value="holidays">
+                                        <label for="division_2" class="custom-control-label">Safiya Holidays</label>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label for="compName" class="col-4 col-form-label">Company Name</label>
                                     <div class="col-8">
                                         <div class="input-group">
@@ -32,6 +49,7 @@
                                                 </div>
                                             </div>
                                             <input id="compName" name="compName" placeholder="Enter Company Name" type="text" class="form-control" required="required" value="Safiya Travels PVT LTD" />
+                                            <input id="compLogo" name="compLogo" type="hidden" class="form-control" required="required" value="" />
                                         </div>
                                     </div>
                                 </div>
@@ -149,7 +167,7 @@
                                 <table width="600" cellspacing="0" cellpadding="0" border="0">
                                     <tbody>
                                         <tr>
-                                            <td style="padding:15px 12px 0px 0px;vertical-align:top" width="100" valign="top"><img alt="Safiya Travels Logo" style="width:140px;border-radius:0%" src="https://www.dropbox.com/s/lenc3g9ywhrv1vu/safiya-signature-logo.png?dl=1" width="100" class="CToWUd" /></td>
+                                            <td style="padding:15px 12px 0px 0px;vertical-align:top" width="100" valign="top"><img id="compLogoField" alt="Safiya Logo" style="width:140px;border-radius:0%" src="https://www.dropbox.com/s/lenc3g9ywhrv1vu/safiya-signature-logo.png?dl=1" width="100" class="CToWUd" /></td>
                                             <td style="font-size:1em;padding:0px 0px 0px 12px;vertical-align:top;border-left:1px solid #ac1f27" valign="top">
                                                 <table style='line-height:1.4;font-family:"Lucida Console",Monaco,monospace;font-size:80%;color:rgb(0,0,1)' cellspacing="0" cellpadding="0" border="0">
                                                     <tbody>
@@ -211,21 +229,80 @@
             </div>
         </div>
         <script>
+            //Variables
+            var compNames = {
+                                online: "Safiya Online",
+                                travels: "Safiya Travels PVT LTD",
+                                holidays:'Safiya Holidays'
+                            };
+
+            var compLogos = {
+                                online:'https://www.dropbox.com/s/vqq1wyewbvzw85s/safiya-online-signature-logo.png?dl=1',
+                                travels:'https://www.dropbox.com/s/lenc3g9ywhrv1vu/safiya-signature-logo.png?dl=1',
+                                holidays:'https://www.dropbox.com/s/kfzydzwwx7gvuky/safiya-holidays-signature-logo.png?dl=1'
+                            };
+
+
+            var compAddresses = {
+                                    online:'39/4071 B, Safiya Tower, Near Ravipuram Temple, Ravipuram Road,Kochi Kerala,India - 682016',
+                                    travels:'Manuelsons Tower, G.H.Road Opposite T P Building, Mananchira, Kozhikode, Kerala 673001',
+                                    holidays:'Manuelsons Tower, G.H.Road Opposite T P Building, Mananchira, Kozhikode, Kerala 673001'
+                                }
+
+            var divisionSelected = 'travels';
+
             //jQuery
             $( document ).ready(function() {
-                $('#compAddress').val("Manuelsons Tower, G.H.Road Opposite T P Building, Mananchira, Kozhikode, Kerala 673001");
+
+                //Set Default Values for Safiya Travels
+                setDefaults('travels')
+
+
+                // Watch for Division Change
+                $('input[type=radio][name=division]').change(function() {
+
+                    switch(this.value){
+                        case 'online':
+                            console.log('online');
+                            setDefaults('online')
+                            break;
+
+                        case 'travels':
+                            console.log('travels');
+                            setDefaults('travels')
+                            break;
+
+                        case 'holidays':
+                            console.log('holidays');
+                            setDefaults('holidays')
+                            break;
+
+                    }
+
+                });
+
+
                 //Generate Signature
                 $('#generate').click(function(e){
                     alert("click");
                     // console.log($('#signature-form').serialize());
                     $('#signature-form *').filter(':input').each(function(){
+
                         var fieldValue = $(this).val();
                         var fieldID = $(this).attr('id');
-                        if(fieldID == 'compWeb1' || fieldID == "compWeb2"){
+
+                        if( fieldID == 'compWeb1' || fieldID == "compWeb2" ){
+
                             $('#'+fieldID+'Field').attr("href",);
-                        }else if(fieldID == "empMail"){
+
+                        }else if( fieldID == "empMail" ){
 
                             $('#'+fieldID+'Field').attr("href","mailto:"+fieldValue);
+
+                        }else if( fieldID == 'compLogo' ){
+                            
+                            $('#'+fieldID+'Field').attr("src",fieldValue);
+
                         }
 
                         console.log(fieldID);
@@ -241,11 +318,19 @@
                     $('#signature-form').find("input, textarea").val("");
                 });
 
+                //Reset
                 $('.reset').click(function(){
                     location.reload(true);
                 });
 
             });
+
+            //Set Default values for each division
+            function setDefaults(division){
+                $('#compName').val(compNames[division]);
+                $('#compAddress').val(compAddresses[division]);
+                $('#compLogo').val(compLogos[division]);
+            }
 
             //JS to Copy to Clipboard
             function copyToClip(str) {
@@ -258,6 +343,8 @@
                 document.execCommand("copy");
                 document.removeEventListener("copy", listener);
             };
+
+
 
 
         </script>
