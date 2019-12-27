@@ -114,6 +114,19 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="247contact" class="col-4 col-form-label">24/7 Phone</label>
+                                <div class="col-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-volume-control-phone"></i>
+                                            </div>
+                                        </div>
+                                        <input id="247contact" name="247contact" placeholder="Please Enter a 24/7 Phone Number If Any" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="empMail" class="col-4 col-form-label">Employee Email</label>
                                 <div class="col-8">
                                     <div class="input-group">
@@ -153,9 +166,87 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label class="col-4">Add Bank Details?</label>
+                                <div class="col-8">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input name="bankOption" id="bankOption_0" type="radio" class="custom-control-input" value="yes">
+                                        <label for="bankOption_0" class="custom-control-label">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input name="bankOption" id="bankOption_1" type="radio" checked="checked" class="custom-control-input" value="No">
+                                        <label for="bankOption_1" class="custom-control-label">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group bank-details d-none row">
+                                <label for="bankName" class="col-4 col-form-label">Bank Name</label>
+                                <div class="col-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-building"></i>
+                                            </div>
+                                        </div>
+                                        <input id="bankName" name="bankName" placeholder="Please Enter Bank Name" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group bank-details d-none row">
+                                <label for="bankHolder" class="col-4 col-form-label">Account Holding Entity name</label>
+                                <div class="col-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-address-card"></i>
+                                            </div>
+                                        </div>
+                                        <input id="bankHolder" name="bankHolder" title="Please Enter The Enitity Name as Per Bank Records" placeholder="Please Enter The Enitity Name as Per Bank Records" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group bank-details d-none row">
+                                <label for="bankAcNumber" class="col-4 col-form-label">Account Number</label>
+                                <div class="col-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-arrow-circle-o-right"></i>
+                                            </div>
+                                        </div>
+                                        <input id="bankAcNumber" name="bankAcNumber" title="Please Enter the Bank Account Number" placeholder="Please Enter the Bank Account Number" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group bank-details d-none row">
+                                <label for="bankBranch" class="col-4 col-form-label">Branch Name</label>
+                                <div class="col-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-map-marker"></i>
+                                            </div>
+                                        </div>
+                                        <input id="bankBranch" name="bankBranch" title="Please Enter the Bank Branch Name" placeholder="Please Enter the Bank Branch Name" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group bank-details d-none row">
+                                <label for="bankIFSC" class="col-4 col-form-label">IFSC Code</label>
+                                <div class="col-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-barcode"></i>
+                                            </div>
+                                        </div>
+                                        <input id="bankIFSC" name="bankIFSC" title="Please Enter the IFSC code" placeholder="Please Enter the IFSC code" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="signaturePrefix" class="col-4 col-form-label">Signature Prefix</label>
                                 <div class="col-8">
-                                    <textarea id="signaturePrefix" name="signaturePrefix" cols="40" rows="5" class="form-control" required="required" placeholder="Thanks and Regards,"></textarea>
+                                    <input id="signaturePrefix" name="signaturePrefix" type="text" class="form-control" value="Thanks and Regards,">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -182,7 +273,8 @@
                             <div id="signaturePrefixField">
                                 Thanks and Regards,
                             </div>
-                            <hr>
+                            <!-- <hr> -->
+                            <br>
                             <table width="600" cellspacing="0" cellpadding="0" border="0">
                                 <tbody>
                                     <tr>
@@ -238,6 +330,42 @@
                                 </tbody>
                             </table>
                             <hr>
+                            <div class="247container" style="display: none;">
+                                <span style="font-weight:600;color:#e70312"> <img class="signature-icon" style="width: 40px; height: 40px;" src="https://www.dropbox.com/s/yin5joeb7ztlhpk/24x7-Phone-Number.png?dl=1"></span> <span style="vertical-align: 4px;font-size:20px;color:#e70312;font-weight: bold;" class="v-align-offset">24/7 Contact Number:</span>&nbsp;<span id="247contactField" style="vertical-align: 4px;" class="v-align-offset">+91 8129778244</span>
+                                <hr>
+                            </div>
+                            <div style='font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;font-size: 14px;display: none;' id="bank-details">
+                                <h6 style="font-weight: bold;font-size: 18px;margin-bottom: 5px;margin-top:5px;">Bank Account Details:</h6>
+                                <div class="bank-fields">
+                                    <strong>
+                                        <span class="bank-clear" id="bankHolderField"></span>
+                                    </strong>
+                                </div>
+                                <div class="bank-fields">
+                                    <strong>
+                                        <span>Account Number:</span>
+                                    </strong>
+                                    <span class="bank-clear" id="bankAcNumberField"></span>
+                                </div>
+                                <div class="bank-fields">
+                                    <strong>
+                                        <span>Bank Name:</span>
+                                    </strong>
+                                    <span class="bank-clear" id="bankNameField"></span>
+                                </div>
+                                <div class="bank-fields">
+                                    <strong>
+                                        <span>Branch:</span>
+                                    </strong>
+                                    <span class="bank-clear" id="bankBranchField"></span>
+                                </div>
+                                <div class="bank-fields">
+                                    <strong>
+                                        <span>IFSC Code:</span>
+                                    </strong>
+                                    <span class="bank-clear" id="bankIFSCField"></span>
+                                </div>
+                            </div>
                             <div id="signatureSuffixField">
                             </div>
                         </div>
@@ -289,8 +417,7 @@
         $(document).ready(function () {
 
             //Set Default Values for Safiya Travels
-            setDefaults('travels')
-
+            setDefaults('travels');
 
             // Watch for Division Change
             $('input[type=radio][name=division]').change(function () {
@@ -311,6 +438,26 @@
                 }
 
             });
+
+            //Toggle Bank Details
+            $('input[type=radio][name=bankOption]').change(function () {
+
+                if (this.value == 'yes') {
+
+                    $('.bank-details').removeClass('d-none');
+                    $('#bank-details').css("display", "block");
+
+                } else {
+
+                    $('.bank-clear').text('');
+                    $('.bank-details input').val("");
+                    $('#bank-details').css("display", "none");
+                    $('.bank-details').addClass('d-none');
+
+                }
+
+            });
+
 
 
             //Generate Signature
@@ -341,6 +488,16 @@
                     $('#' + fieldID + 'Field').text(fieldValue);
                     // console.log($(this).attr('id'));
                 });
+
+                if($('#247contact').val() == ''){
+                    console.log("sadfasdf");
+
+                    $('.247container').css("display", "none");
+
+                }else{
+
+                    $('.247container').css("display", "block");
+                }
             });
 
             //Clear All Fields
@@ -368,6 +525,7 @@
 
         //JS to Copy to Clipboard
         function copyToClip(str) {
+
             function listener(e) {
                 e.clipboardData.setData("text/html", str);
                 e.clipboardData.setData("text/plain", str);
@@ -376,7 +534,9 @@
             document.addEventListener("copy", listener);
             document.execCommand("copy");
             document.removeEventListener("copy", listener);
+
         };
+
 
     </script>
 </body>
