@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        <meta charset="utf-8" />
-        <title>Email Signature Generator</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    </head>
-    <body>
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-12">
-                    <img src="safiya-logo.png" class="mx-auto d-block" alt="" />
-                    <h1 class="text-center mb-5">Email Signature Generator</h1>
-                </div>
-                <div class="col-5">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="text-center">Please Enter Details</h5>
-                        </div>
-                        <div class="card-body">
-                            <form id="signature-form">
-                                <div class="form-group row">
-                                    <label class="col-4">Choose Division</label>
-                                    <div class="col-8">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Email Signature Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <img src="safiya-logo.png" class="mx-auto d-block" alt="" />
+                <h1 class="text-center mb-5">Email Signature Generator</h1>
+            </div>
+            <div class="col-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="text-center">Please Enter Details</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="signature-form">
+                            <div class="form-group row">
+                                <label class="col-4">Choose Division</label>
+                                <div class="col-8">
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input name="division" id="division_0" type="radio" class="custom-control-input" value="travels" checked="checked" >
+                                        <input name="division" id="division_0" type="radio" class="custom-control-input" value="travels" checked="checked">
                                         <label for="division_0" class="custom-control-label">Safiya Travels</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
@@ -37,322 +39,346 @@
                                         <input name="division" id="division_2" type="radio" class="custom-control-input" value="holidays">
                                         <label for="division_2" class="custom-control-label">Safiya Holidays</label>
                                     </div>
-                                    </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="compName" class="col-4 col-form-label">Company Name</label>
-                                    <div class="col-8">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fa fa-building"></i>
-                                                </div>
-                                            </div>
-                                            <input id="compName" name="compName" placeholder="Enter Company Name" type="text" class="form-control" required="required" value="Safiya Travels PVT LTD" />
-                                            <input id="compLogo" name="compLogo" type="hidden" class="form-control" required="required" value="" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="compAddress" class="col-4 col-form-label">Company Address</label>
-                                    <div class="col-8">
-                                        <textarea id="compAddress" name="compAddress" cols="40" rows="5" class="form-control" required="required" value="Manuelsons Tower, G.H.Road Opposite T P Building, Mananchira, Kozhikode, Kerala 673001"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-4 col-form-label" for="empName">Employee Name</label>
-                                    <div class="col-8">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fa fa-address-card"></i>
-                                                </div>
-                                            </div>
-                                            <input id="empName" name="empName" placeholder="Enter Employee Name Here" type="text" class="form-control" required="required" value="Vibin Balan" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="empDesignation" class="col-4 col-form-label">Employee Designation</label>
-                                    <div class="col-8">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fa fa-user-circle"></i>
-                                                </div>
-                                            </div>
-                                            <input id="empDesignation" name="empDesignation" placeholder="Enter Employee Designation" type="text" class="form-control" required="required" value="Operations Manager" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="empMobile" class="col-4 col-form-label">Employee Mobile</label>
-                                    <div class="col-8">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fa fa-mobile"></i>
-                                                </div>
-                                            </div>
-                                            <input id="empMobile" name="empMobile" placeholder="Employee Mobile Number" type="text" class="form-control" required="required" value="+91 8129778244"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="empPhone" class="col-4 col-form-label">Employee Phone</label>
-                                    <div class="col-8">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fa fa-phone"></i>
-                                                </div>
-                                            </div>
-                                            <input id="empPhone" name="empPhone" placeholder="Enter Phone Number" type="text" class="form-control" required="required" value="0484 4270700 / Office Ph: 0484 4270706,704" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="empMail" class="col-4 col-form-label">Employee Email</label>
-                                    <div class="col-8">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fa fa-envelope-o"></i>
-                                                </div>
-                                            </div>
-                                            <input id="empMail" name="empMail" placeholder="Enter Employee Email Address" type="text" class="form-control" required="required" value="vibin@safiya.travel"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="compWeb1" class="col-4 col-form-label">Website Link 1</label>
-                                    <div class="col-8">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fa fa-globe"></i>
-                                                </div>
-                                            </div>
-                                            <input id="compWeb1" name="compWeb1" placeholder="Enter Company Website 1" type="text" class="form-control" required="required" value="www.safiya.travel" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="compWeb2" class="col-4 col-form-label">Website Link 2</label>
-                                    <div class="col-8">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fa fa-globe"></i>
-                                                </div>
-                                            </div>
-                                            <input id="compWeb2" name="compWeb2" placeholder="Enter Company Website 2" type="text" class="form-control" required="required" value="www.safiyaholidays.in" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="card-footer">
-                            <button name="submit" id="generate" class="btn btn-primary btn-block"><i class="fa fa-cogs mr-2"></i>Generate Signature</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-7">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="text-center">Email Signature</h5>
-                        </div>
-                        <div class="card-body">
-                            <img id="logo-preloaded" class="d-none" src="#">
-                            <div id="signature-container">
-                                <table width="600" cellspacing="0" cellpadding="0" border="0">
-                                    <tbody>
-                                        <tr>
-                                            <td style="padding:15px 12px 0px 0px;vertical-align:top" width="100" valign="top"><img id="compLogoField" alt="Safiya Logo" style="width:140px;border-radius:0%" src="https://www.dropbox.com/s/lenc3g9ywhrv1vu/safiya-signature-logo.png?dl=1" width="100" class="CToWUd" /></td>
-                                            <td style="font-size:1em;padding:0px 0px 0px 12px;vertical-align:top;border-left:1px solid #e70312" valign="top">
-                                                <table style='line-height:1.4;font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;font-size:80%;color:rgb(0,0,1)' cellspacing="0" cellpadding="0" border="0">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td style="padding-bottom:0px"><span style='font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;font-weight:600; font-size:20px;color:#e70312' id="empNameField">Vibin Balan</span></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="color:rgb(0,0,1);padding-bottom:8px"><div style='font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;font-size:14px;font-weight: bold;'> <span id="empDesignationField"> Executive Manager</span> | <span id="compNameField">Safiya Travels PVT LTD</div></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div style='font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;padding-bottom:2px;font-size:14px;'>
-                                                                    <span style="font-weight:600;color:#e70312"> <img class="signature-icon" style="width: 16px; height: 16px;" src="https://www.dropbox.com/s/55914ht20w3ac5p/mobile.png?dl=1"></span> <span id="empMobileField" style="vertical-align: 4px;" class="v-align-offset">+91 8129778244</span>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div style='font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;padding-bottom:2px;font-size:14px;'><span style="font-weight:600;color:#e70312"><img class="signature-icon" style="width: 16px; height: 16px;" src="https://www.dropbox.com/s/znhzngfzelw9i4g/phone.png?dl=1"></span> <span style="vertical-align: 4px;" class="v-align-offset" id="empPhoneField">0484 4270700 / Office Ph: 0484 4270706,704</span></div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div style='font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;padding-bottom:2px;font-size:14px;'><span style="font-weight:600;color:#e70312"><img class="signature-icon" style="width: 16px; height: 16px;" src="https://www.dropbox.com/s/sbi2674lu40ucib/mail.png?dl=1"></span> <a id="empMailField" style="color:black;vertical-align: 4px;" class="v-align-offset" href="mailto:vibin@safiya.travel" target="_blank">vibin@safiya.travel</a></div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div style='font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;padding-bottom:2px;font-size:14px;'><span style="font-weight:600;color:#e70312"><img class="signature-icon" style="width: 16px; height: 16px;" src="https://www.dropbox.com/s/hcwapl9hjay7djr/address.png?dl=1"></span> <span style="vertical-align: 4px;" class="v-align-offset" id="compAddressField">Manuelsons Tower, G.H.Road Opposite T P Building, Mananchira, Kozhikode, Kerala 673001</span></div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="padding:3px 0px 0px">
-                                                                <div style="font-family:&quot;HelveticaNeue-Light&quot;, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;font-weight: bold;font-size:14px;">
-                                                                    <span><img class="signature-icon" style="width: 16px; height: 16px;" src="https://www.dropbox.com/s/wmpq1kjt5pv8jbf/web.png?dl=1"></span>
-                                                                    <span style="vertical-align: 4px;" class="v-align-offset">
-                                                                        <a id="compWeb1Field" href="http://www.safiya.travel" target="_blank" >www.safiya.travel</a> |
-                                                                        <a id="compWeb2Field" href="http://www.safiyaholidays.in" target="_blank" >www.safiyaholidays.in</a>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
                             </div>
-                            <!-- <p class="text-center">Please Enter Your Data to Generate Signature</p> -->
-                        </div>
-                        <div class="card-footer">
-                            <div class="btn-group text-center float-right" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-warning reset"><i class="fa fa-times-circle mr-2"></i>Reset</button>
-                                <button type="button" class="btn btn-danger clear-all"><i class="fa fa-times-circle mr-2"></i>Clear All</button>
-                                <button type="button" class="btn btn-primary" onclick="copyToClip(document.getElementById('signature-container').innerHTML)"><i class="fa fa-copy mr-2"></i>Copy to Clipboard</button>
+                            <div class="form-group row">
+                                <label for="compName" class="col-4 col-form-label">Company Name</label>
+                                <div class="col-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-building"></i>
+                                            </div>
+                                        </div>
+                                        <input id="compName" name="compName" placeholder="Enter Company Name" type="text" class="form-control" required="required" value="Safiya Travels PVT LTD" />
+                                        <input id="compLogo" name="compLogo" type="hidden" class="form-control" required="required" value="" />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                            <div class="form-group row">
+                                <label for="compAddress" class="col-4 col-form-label">Company Address</label>
+                                <div class="col-8">
+                                    <textarea id="compAddress" name="compAddress" cols="40" rows="5" class="form-control" required="required" value="Manuelsons Tower, G.H.Road Opposite T P Building, Mananchira, Kozhikode, Kerala 673001"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-4 col-form-label" for="empName">Employee Name</label>
+                                <div class="col-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-address-card"></i>
+                                            </div>
+                                        </div>
+                                        <input id="empName" name="empName" placeholder="Enter Employee Name Here" type="text" class="form-control" required="required" value="Vibin Balan" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="empDesignation" class="col-4 col-form-label">Employee Designation</label>
+                                <div class="col-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-user-circle"></i>
+                                            </div>
+                                        </div>
+                                        <input id="empDesignation" name="empDesignation" placeholder="Enter Employee Designation" type="text" class="form-control" required="required" value="Operations Manager" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="empMobile" class="col-4 col-form-label">Employee Mobile</label>
+                                <div class="col-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-mobile"></i>
+                                            </div>
+                                        </div>
+                                        <input id="empMobile" name="empMobile" placeholder="Employee Mobile Number" type="text" class="form-control" required="required" value="+91 8129778244" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="empPhone" class="col-4 col-form-label">Employee Phone</label>
+                                <div class="col-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-phone"></i>
+                                            </div>
+                                        </div>
+                                        <input id="empPhone" name="empPhone" placeholder="Enter Phone Number" type="text" class="form-control" required="required" value="0484 4270700 / Office Ph: 0484 4270706,704" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="empMail" class="col-4 col-form-label">Employee Email</label>
+                                <div class="col-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-envelope-o"></i>
+                                            </div>
+                                        </div>
+                                        <input id="empMail" name="empMail" placeholder="Enter Employee Email Address" type="text" class="form-control" required="required" value="vibin@safiya.travel" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="compWeb1" class="col-4 col-form-label">Website Link 1</label>
+                                <div class="col-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-globe"></i>
+                                            </div>
+                                        </div>
+                                        <input id="compWeb1" name="compWeb1" placeholder="Enter Company Website 1" type="text" class="form-control" required="required" value="www.safiya.travel" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="compWeb2" class="col-4 col-form-label">Website Link 2</label>
+                                <div class="col-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-globe"></i>
+                                            </div>
+                                        </div>
+                                        <input id="compWeb2" name="compWeb2" placeholder="Enter Company Website 2" type="text" class="form-control" required="required" value="www.safiyaholidays.in" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="signaturePrefix" class="col-4 col-form-label">Signature Prefix</label>
+                                <div class="col-8">
+                                    <textarea id="signaturePrefix" name="signaturePrefix" cols="40" rows="5" class="form-control" required="required" placeholder="Thanks and Regards,"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="signatureSuffix" class="col-4 col-form-label">Signature Suffix</label>
+                                <div class="col-8">
+                                    <textarea id="signatureSuffix" name="signatureSuffix" cols="40" rows="5" class="form-control" required="required" placeholder="Add Some Custom Text Here"></textarea>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </div>
-                <div class="col-12 pt-5">
-                    <p class="text-center">Powered by <a href="https://teqnius.com">Teqnius</a></p>
+                    <div class="card-footer">
+                        <button name="submit" id="generate" class="btn btn-primary btn-block"><i class="fa fa-cogs mr-2"></i>Generate Signature</button>
+                    </div>
                 </div>
             </div>
+            <div class="col-7">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="text-center">Email Signature</h5>
+                    </div>
+                    <div class="card-body">
+                        <img id="logo-preloaded" class="d-none" src="#">
+                        <div id="signature-container">
+                            <div id="signaturePrefixField">
+                                Thanks and Regards,
+                            </div>
+                            <hr>
+                            <table width="600" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:15px 12px 0px 0px;vertical-align:top" width="100" valign="top"><img id="compLogoField" alt="Safiya Logo" style="width:140px;border-radius:0%" src="https://www.dropbox.com/s/lenc3g9ywhrv1vu/safiya-signature-logo.png?dl=1" width="100" class="CToWUd" /></td>
+                                        <td style="font-size:1em;padding:0px 0px 0px 12px;vertical-align:top;border-left:1px solid #e70312" valign="top">
+                                            <table style='line-height:1.4;font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;font-size:80%;color:rgb(0,0,1)' cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="padding-bottom:0px"><span style='font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;font-weight:600; font-size:20px;color:#e70312' id="empNameField">Vibin Balan</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color:rgb(0,0,1);padding-bottom:8px">
+                                                            <div style='font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;font-size:14px;font-weight: bold;'> <span id="empDesignationField"> Executive Manager</span> | <span id="compNameField">Safiya Travels PVT LTD</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div style='font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;padding-bottom:2px;font-size:14px;'>
+                                                                <span style="font-weight:600;color:#e70312"> <img class="signature-icon" style="width: 16px; height: 16px;" src="https://www.dropbox.com/s/55914ht20w3ac5p/mobile.png?dl=1"></span> <span id="empMobileField" style="vertical-align: 4px;" class="v-align-offset">+91 8129778244</span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div style='font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;padding-bottom:2px;font-size:14px;'><span style="font-weight:600;color:#e70312"><img class="signature-icon" style="width: 16px; height: 16px;" src="https://www.dropbox.com/s/znhzngfzelw9i4g/phone.png?dl=1"></span> <span style="vertical-align: 4px;" class="v-align-offset" id="empPhoneField">0484 4270700 / Office Ph: 0484 4270706,704</span></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div style='font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;padding-bottom:2px;font-size:14px;'><span style="font-weight:600;color:#e70312"><img class="signature-icon" style="width: 16px; height: 16px;" src="https://www.dropbox.com/s/sbi2674lu40ucib/mail.png?dl=1"></span> <a id="empMailField" style="color:black;vertical-align: 4px;" class="v-align-offset" href="mailto:vibin@safiya.travel" target="_blank">vibin@safiya.travel</a></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div style='font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;padding-bottom:2px;font-size:14px;'><span style="font-weight:600;color:#e70312"><img class="signature-icon" style="width: 16px; height: 16px;" src="https://www.dropbox.com/s/hcwapl9hjay7djr/address.png?dl=1"></span> <span style="vertical-align: 4px;" class="v-align-offset" id="compAddressField">Manuelsons Tower, G.H.Road Opposite T P Building, Mananchira, Kozhikode, Kerala 673001</span></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding:3px 0px 0px">
+                                                            <div style="font-family:&quot;HelveticaNeue-Light&quot;, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;font-weight: bold;font-size:14px;">
+                                                                <span><img class="signature-icon" style="width: 16px; height: 16px;" src="https://www.dropbox.com/s/wmpq1kjt5pv8jbf/web.png?dl=1"></span>
+                                                                <span style="vertical-align: 4px;" class="v-align-offset">
+                                                                    <a id="compWeb1Field" href="http://www.safiya.travel" target="_blank">www.safiya.travel</a> |
+                                                                    <a id="compWeb2Field" href="http://www.safiyaholidays.in" target="_blank">www.safiyaholidays.in</a>
+                                                                </span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <hr>
+                            <div id="signatureSuffixField">
+                            </div>
+                        </div>
+                        <!-- <p class="text-center">Please Enter Your Data to Generate Signature</p> -->
+                    </div>
+                    <div class="card-footer">
+                        <div class="btn-group text-center float-right" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-warning reset"><i class="fa fa-times-circle mr-2"></i>Reset</button>
+                            <button type="button" class="btn btn-danger clear-all"><i class="fa fa-times-circle mr-2"></i>Clear All</button>
+                            <button type="button" class="btn btn-primary" onclick="copyToClip(document.getElementById('signature-container').innerHTML)"><i class="fa fa-copy mr-2"></i>Copy to Clipboard</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 pt-5">
+                <p class="text-center">Powered by <a href="https://teqnius.com">Teqnius</a></p>
+            </div>
         </div>
-        <style>
-            .v-align-offset{vertical-align:0 !important;}
-        </style>
-        <script>
-            //Variables
-            var compNames = {
-                                online: "Safiya Online",
-                                travels: "Safiya Travels PVT LTD",
-                                holidays:'Safiya Holidays'
-                            };
+    </div>
+    <style>
+        .v-align-offset {
+            vertical-align: 0 !important;
+        }
+    </style>
+    <script>
+        //Variables
+        var compNames = {
+            online: "Safiya Online",
+            travels: "Safiya Travels PVT LTD",
+            holidays: 'Safiya Holidays'
+        };
 
-            var compLogos = {
-                                online:'https://www.dropbox.com/s/vqq1wyewbvzw85s/safiya-online-signature-logo.png?dl=1',
-                                travels:'https://www.dropbox.com/s/lenc3g9ywhrv1vu/safiya-signature-logo.png?dl=1',
-                                holidays:'https://www.dropbox.com/s/kfzydzwwx7gvuky/safiya-holidays-signature-logo.png?dl=1'
-                            };
-
-
-            var compAddresses = {
-                                    online:'39/4071 B, Safiya Tower, Near Ravipuram Temple, Ravipuram Road,Kochi Kerala,India - 682016',
-                                    travels:'Manuelsons Tower, G.H.Road Opposite T P Building, Mananchira, Kozhikode, Kerala 673001',
-                                    holidays:'Manuelsons Tower, G.H.Road Opposite T P Building, Mananchira, Kozhikode, Kerala 673001'
-                                }
-
-            var divisionSelected = 'travels';
-
-            //jQuery
-            $( document ).ready(function() {
-
-                //Set Default Values for Safiya Travels
-                setDefaults('travels')
+        var compLogos = {
+            online: 'https://www.dropbox.com/s/vqq1wyewbvzw85s/safiya-online-signature-logo.png?dl=1',
+            travels: 'https://www.dropbox.com/s/lenc3g9ywhrv1vu/safiya-signature-logo.png?dl=1',
+            holidays: 'https://www.dropbox.com/s/kfzydzwwx7gvuky/safiya-holidays-signature-logo.png?dl=1'
+        };
 
 
-                // Watch for Division Change
-                $('input[type=radio][name=division]').change(function() {
+        var compAddresses = {
+            online: '39/4071 B, Safiya Tower, Near Ravipuram Temple, Ravipuram Road,Kochi Kerala,India - 682016',
+            travels: 'Manuelsons Tower, G.H.Road Opposite T P Building, Mananchira, Kozhikode, Kerala 673001',
+            holidays: 'Manuelsons Tower, G.H.Road Opposite T P Building, Mananchira, Kozhikode, Kerala 673001'
+        }
 
-                    switch(this.value){
-                        case 'online':
-                            setDefaults('online');
-                            break;
+        var divisionSelected = 'travels';
 
-                        case 'travels':
-                            setDefaults('travels');
-                            break;
+        //jQuery
+        $(document).ready(function () {
 
-                        case 'holidays':
-                            setDefaults('holidays');
-                            break;
-
-                    }
-
-                });
+            //Set Default Values for Safiya Travels
+            setDefaults('travels')
 
 
-                //Generate Signature
-                $('#generate').click(function(e){
-                    // alert("click");
-                    // console.log($('#signature-form').serialize());
-                    $('#signature-form *').filter(':input').each(function(){
+            // Watch for Division Change
+            $('input[type=radio][name=division]').change(function () {
 
-                        var fieldValue = $(this).val();
-                        var fieldID = $(this).attr('id');
+                switch (this.value) {
+                    case 'online':
+                        setDefaults('online');
+                        break;
 
-                        if( fieldID == 'compWeb1' || fieldID == "compWeb2" ){
+                    case 'travels':
+                        setDefaults('travels');
+                        break;
 
-                            $('#'+fieldID+'Field').attr("href",);
+                    case 'holidays':
+                        setDefaults('holidays');
+                        break;
 
-                        }else if( fieldID == "empMail" ){
-
-                            $('#'+fieldID+'Field').attr("href","mailto:"+fieldValue);
-
-                        }else if( fieldID == 'compLogo' ){
-                            
-                            $('#'+fieldID+'Field').attr("src",fieldValue);
-
-                        }
-
-                        console.log(fieldID);
-                        console.log(fieldValue);
-                        $('#'+fieldID+'Field').text(fieldValue);
-                        // console.log($(this).attr('id'));
-                    });
-                });
-
-                //Clear All Fields
-                $(".clear-all").click(function() {
-                    alert("cleared");
-                    $('#signature-form').find("input, textarea").val("");
-                });
-
-                //Reset
-                $('.reset').click(function(){
-                    location.reload(true);
-                });
-
-                preloader();
+                }
 
             });
 
-            //Set Default values for each division
-            function setDefaults(division){
-                $('#compName').val(compNames[division]);
-                $('#compAddress').val(compAddresses[division]);
-                $('#compLogo').val(compLogos[division]);
-                $('#logo-preloaded').attr('src', compLogos[division]);
+
+            //Generate Signature
+            $('#generate').click(function (e) {
+                // alert("click");
+                // console.log($('#signature-form').serialize());
+                $('#signature-form *').filter(':input').each(function () {
+
+                    var fieldValue = $(this).val();
+                    var fieldID = $(this).attr('id');
+
+                    if (fieldID == 'compWeb1' || fieldID == "compWeb2") {
+
+                        $('#' + fieldID + 'Field').attr("href");
+
+                    } else if (fieldID == "empMail") {
+
+                        $('#' + fieldID + 'Field').attr("href", "mailto:" + fieldValue);
+
+                    } else if (fieldID == 'compLogo') {
+
+                        $('#' + fieldID + 'Field').attr("src", fieldValue);
+
+                    }
+
+                    console.log(fieldID);
+                    console.log(fieldValue);
+                    $('#' + fieldID + 'Field').text(fieldValue);
+                    // console.log($(this).attr('id'));
+                });
+            });
+
+            //Clear All Fields
+            $(".clear-all").click(function () {
+                alert("cleared");
+                $('#signature-form').find("input, textarea").val("");
+            });
+
+            //Reset
+            $('.reset').click(function () {
+                location.reload(true);
+            });
+
+            preloader();
+
+        });
+
+        //Set Default values for each division
+        function setDefaults(division) {
+            $('#compName').val(compNames[division]);
+            $('#compAddress').val(compAddresses[division]);
+            $('#compLogo').val(compLogos[division]);
+            $('#logo-preloaded').attr('src', compLogos[division]);
+        }
+
+        //JS to Copy to Clipboard
+        function copyToClip(str) {
+            function listener(e) {
+                e.clipboardData.setData("text/html", str);
+                e.clipboardData.setData("text/plain", str);
+                e.preventDefault();
             }
+            document.addEventListener("copy", listener);
+            document.execCommand("copy");
+            document.removeEventListener("copy", listener);
+        };
 
-            //JS to Copy to Clipboard
-            function copyToClip(str) {
-                function listener(e) {
-                    e.clipboardData.setData("text/html", str);
-                    e.clipboardData.setData("text/plain", str);
-                    e.preventDefault();
-                }
-                document.addEventListener("copy", listener);
-                document.execCommand("copy");
-                document.removeEventListener("copy", listener);
-            };
+    </script>
+</body>
 
-        </script>
-    </body>
 </html>
