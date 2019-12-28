@@ -7,7 +7,8 @@
     <title>Email Signature Generator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.min.js" integrity="sha256-15owqJa8me4REHGJOz0YGNSSNjC/3wme7FRXaRVwxRY=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
                         <h5 class="text-center">Please Enter Details</h5>
                     </div>
                     <div class="card-body">
-                        <form id="signature-form">
+                        <form id="signature-form" class="repeater">
                             <div class="form-group row">
                                 <label class="col-4">Choose Division</label>
                                 <div class="col-8">
@@ -178,71 +179,88 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group bank-details d-none row">
-                                <label for="bankName" class="col-4 col-form-label">Bank Name</label>
-                                <div class="col-8">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">
-                                                <i class="fa fa-building"></i>
+
+                            <div class="bank-details-form-container d-none">
+                                <div data-repeater-list="group-a">
+                                    <div data-repeater-item class="bank-individual-container mb-2">
+                                        <h5 class="text-center bank-count">Bank Account 1</h5>
+                                        <div class="form-group bank-details  row">
+                                            <label for="bankName" class="col-4 col-form-label">Bank Name</label>
+                                            <div class="col-8">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="fa fa-building"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input id="bankName" name="bankName" placeholder="Please Enter Bank Name" type="text" class="form-control">
+                                                </div>
                                             </div>
                                         </div>
-                                        <input id="bankName" name="bankName" placeholder="Please Enter Bank Name" type="text" class="form-control">
+                                        <div class="form-group bank-details row">
+                                            <label for="bankHolder" class="col-4 col-form-label">Account Holding Entity name</label>
+                                            <div class="col-8">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="fa fa-address-card"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input id="bankHolder" name="bankHolder" title="Please Enter The Enitity Name as Per Bank Records" placeholder="Please Enter The Enitity Name as Per Bank Records" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group bank-details row">
+                                            <label for="bankAcNumber" class="col-4 col-form-label">Account Number</label>
+                                            <div class="col-8">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="fa fa-arrow-circle-o-right"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input id="bankAcNumber" name="bankAcNumber" title="Please Enter the Bank Account Number" placeholder="Please Enter the Bank Account Number" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group bank-details row">
+                                            <label for="bankBranch" class="col-4 col-form-label">Branch Name</label>
+                                            <div class="col-8">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="fa fa-map-marker"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input id="bankBranch" name="bankBranch" title="Please Enter the Bank Branch Name" placeholder="Please Enter the Bank Branch Name" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group bank-details row mb-0">
+                                            <label for="bankIFSC" class="col-4 col-form-label">IFSC Code</label>
+                                            <div class="col-8">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="fa fa-barcode"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input id="bankIFSC" name="bankIFSC" title="Please Enter the IFSC code" placeholder="Please Enter the IFSC code" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button data-repeater-delete type="button" class="btn btn-sm btn-danger pull-right my-2"><i class="fa fa-minus-square mr-2"></i>Remove Account</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button data-repeater-create type="button" class="btn btn-sm btn-success pull-right my-2"><i class="fa fa-plus-square mr-2"></i>Add Another Bank Account</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group bank-details d-none row">
-                                <label for="bankHolder" class="col-4 col-form-label">Account Holding Entity name</label>
-                                <div class="col-8">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">
-                                                <i class="fa fa-address-card"></i>
-                                            </div>
-                                        </div>
-                                        <input id="bankHolder" name="bankHolder" title="Please Enter The Enitity Name as Per Bank Records" placeholder="Please Enter The Enitity Name as Per Bank Records" type="text" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group bank-details d-none row">
-                                <label for="bankAcNumber" class="col-4 col-form-label">Account Number</label>
-                                <div class="col-8">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">
-                                                <i class="fa fa-arrow-circle-o-right"></i>
-                                            </div>
-                                        </div>
-                                        <input id="bankAcNumber" name="bankAcNumber" title="Please Enter the Bank Account Number" placeholder="Please Enter the Bank Account Number" type="text" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group bank-details d-none row">
-                                <label for="bankBranch" class="col-4 col-form-label">Branch Name</label>
-                                <div class="col-8">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">
-                                                <i class="fa fa-map-marker"></i>
-                                            </div>
-                                        </div>
-                                        <input id="bankBranch" name="bankBranch" title="Please Enter the Bank Branch Name" placeholder="Please Enter the Bank Branch Name" type="text" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group bank-details d-none row">
-                                <label for="bankIFSC" class="col-4 col-form-label">IFSC Code</label>
-                                <div class="col-8">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">
-                                                <i class="fa fa-barcode"></i>
-                                            </div>
-                                        </div>
-                                        <input id="bankIFSC" name="bankIFSC" title="Please Enter the IFSC code" placeholder="Please Enter the IFSC code" type="text" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="form-group row">
                                 <label for="signaturePrefix" class="col-4 col-form-label">Signature Prefix</label>
                                 <div class="col-8">
@@ -255,6 +273,8 @@
                                     <textarea id="signatureSuffix" name="signatureSuffix" cols="40" rows="5" class="form-control" required="required" placeholder="Add Some Custom Text Here"></textarea>
                                 </div>
                             </div>
+
+                            
                         </form>
                     </div>
                     <div class="card-footer">
@@ -270,13 +290,22 @@
                     <div class="card-body">
                         <img id="logo-preloaded" class="d-none" src="#">
                         <div id="signature-container">
-                            <div id="signaturePrefixField">
-                                Thanks and Regards,
-                            </div>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <span id="signaturePrefixField" style="font-weight: bold;float:left;font-size: 14px;margin-bottom: 5px;">Thanks and Regards,</span>
+                                    </td>
+                                </tr>
+                            </table>
                             <!-- <hr> -->
-                            <br>
+
                             <table width="600" cellspacing="0" cellpadding="0" border="0">
                                 <tbody>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td style="padding:15px 12px 0px 0px;vertical-align:top" width="100" valign="top"><img id="compLogoField" alt="Safiya Logo" style="width:140px;border-radius:0%" src="https://www.dropbox.com/s/lenc3g9ywhrv1vu/safiya-signature-logo.png?dl=1" width="100" class="CToWUd" /></td>
                                         <td style="font-size:1em;padding:0px 0px 0px 12px;vertical-align:top;border-left:1px solid #e70312" valign="top">
@@ -331,43 +360,17 @@
                             </table>
                             <hr>
                             <div class="247container" style="display: none;">
-                                <span style="font-weight:600;color:#e70312"> <img class="signature-icon" style="width: 40px; height: 40px;" src="https://www.dropbox.com/s/yin5joeb7ztlhpk/24x7-Phone-Number.png?dl=1"></span> <span style="vertical-align: 4px;font-size:20px;color:#e70312;font-weight: bold;" class="v-align-offset">24/7 Contact Number:</span>&nbsp;<span id="247contactField" style="vertical-align: 4px;" class="v-align-offset">+91 8129778244</span>
+                                <span style="font-weight:600;color:#e70312"> <img class="signature-icon" style="width: 40px; height: 40px;" src="https://www.dropbox.com/s/yin5joeb7ztlhpk/24x7-Phone-Number.png?dl=1"></span> <span style="vertical-align: 4px;font-size:20px;color:#e70312;font-weight: bold;" class="v-align-offset">24/7 Contact Number:</span>&nbsp;<span id="247contactField" style="vertical-align: 4px;font-weight:bold;font-size:20px;" class="v-align-offset">+91 8129778244</span>
                                 <hr>
                             </div>
-                            <div style='font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;font-size: 14px;display: none;' id="bank-details">
-                                <h6 style="font-weight: bold;font-size: 18px;margin-bottom: 5px;margin-top:5px;">Bank Account Details:</h6>
-                                <div class="bank-fields">
-                                    <strong>
-                                        <span class="bank-clear" id="bankHolderField"></span>
-                                    </strong>
-                                </div>
-                                <div class="bank-fields">
-                                    <strong>
-                                        <span>Account Number:</span>
-                                    </strong>
-                                    <span class="bank-clear" id="bankAcNumberField"></span>
-                                </div>
-                                <div class="bank-fields">
-                                    <strong>
-                                        <span>Bank Name:</span>
-                                    </strong>
-                                    <span class="bank-clear" id="bankNameField"></span>
-                                </div>
-                                <div class="bank-fields">
-                                    <strong>
-                                        <span>Branch:</span>
-                                    </strong>
-                                    <span class="bank-clear" id="bankBranchField"></span>
-                                </div>
-                                <div class="bank-fields">
-                                    <strong>
-                                        <span>IFSC Code:</span>
-                                    </strong>
-                                    <span class="bank-clear" id="bankIFSCField"></span>
-                                </div>
+
+                            <div id="bank-details-table-container">
+
                             </div>
+                            <br>
                             <div id="signatureSuffixField">
                             </div>
+
                         </div>
                         <!-- <p class="text-center">Please Enter Your Data to Generate Signature</p> -->
                     </div>
@@ -385,9 +388,17 @@
             </div>
         </div>
     </div>
+
     <style>
         .v-align-offset {
             vertical-align: 0 !important;
+        }
+
+        .bank-individual-container{
+                    border: 1px solid #b0b0b0;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #efefef;
         }
     </style>
     <script>
@@ -444,15 +455,14 @@
 
                 if (this.value == 'yes') {
 
-                    $('.bank-details').removeClass('d-none');
-                    $('#bank-details').css("display", "block");
+                    initBankRepeater();
+                    $('.bank-details-form-container').removeClass('d-none');
 
                 } else {
 
                     $('.bank-clear').text('');
-                    $('.bank-details input').val("");
-                    $('#bank-details').css("display", "none");
-                    $('.bank-details').addClass('d-none');
+                    $('.bank-details-form-container input').val("");
+                    $('.bank-details-form-container').addClass('d-none');
 
                 }
 
@@ -480,24 +490,37 @@
                     } else if (fieldID == 'compLogo') {
 
                         $('#' + fieldID + 'Field').attr("src", fieldValue);
-
+                        
+                    }else{
+                        
+                        $('#' + fieldID + 'Field').text(fieldValue);
                     }
 
-                    console.log(fieldID);
-                    console.log(fieldValue);
-                    $('#' + fieldID + 'Field').text(fieldValue);
-                    // console.log($(this).attr('id'));
+
                 });
 
-                if($('#247contact').val() == ''){
-                    console.log("sadfasdf");
+                $('#signature-form textarea').each(function () {
+                    console.log('textarea')
+
+                    var fieldValue = $(this).val();
+                    var fieldID = $(this).attr('id');
+
+                    $('#' + fieldID + 'Field').text(fieldValue);
+
+
+                });
+
+                if ($('#247contact').val() == '') {
 
                     $('.247container').css("display", "none");
 
-                }else{
+                } else {
 
                     $('.247container').css("display", "block");
                 }
+
+                //Generate Bank Details
+                generateBankTables();
             });
 
             //Clear All Fields
@@ -536,6 +559,139 @@
             document.removeEventListener("copy", listener);
 
         };
+
+        function initBankRepeater(){
+
+             $('.repeater').repeater({
+
+                // Removes the delete button from the first list item,
+                isFirstItemUndeletable: true,
+                show: function () {
+
+                    var repeaterItems = $("div[data-repeater-item]");
+
+                    $(this).slideDown();
+                    var repeaterItems = $("div[data-repeater-item]");
+                    $(this).find('.bank-count').text("Bank Account "+repeaterItems.length);
+
+                }
+
+             });
+        }
+
+        function generateBankTables(){
+
+             var bankRepeaterItems = $("div[data-repeater-item]");
+             bankAccountCount = bankRepeaterItems.length;
+             bankStatus = $('input[type=radio][name=bankOption]:checked').val();
+
+             console.log('bank repeater coutn '+ bankAccountCount);
+             console.log('bank stauts '+ bankStatus);
+
+            if (bankAccountCount > 0 && bankStatus == 'yes') {
+
+                $('#bank-details-table-container').empty();
+
+                //Start HTML Table
+                bankTableHtml = '<h6 style="font-weight: bold;font-size: 18px;margin-bottom: 5px;margin-top:5px;">Bank Account Details:</h6>';
+                bankTableHtml += '<table style="font-size: 14px !important;width: 100%;">';
+
+
+                //Start Table Header
+                bankTableHtml += '    <thead style="background-color:#cccccc;text-align: center;font-weight: bold;">';
+                bankTableHtml += '        <tr id="account-count-row">';
+                bankTableHtml += '            <td style=" border: 1px solid #cccccc; "></td>';
+
+                for (i = 0; i < bankAccountCount; i++) {
+
+                    var bankAccountCountTitle = 'Bank Account ' + (i+1);
+                    bankTableHtml += '<td style=" border: 1px solid #cccccc; ">' + bankAccountCountTitle + '</td>';
+
+                }
+
+                bankTableHtml += '        </tr>';
+                bankTableHtml += '    </thead>';
+                // End Table Header
+
+                // Start Table Body
+                bankTableHtml += '    <tbody>';
+
+                //Start Account Holder Row
+                bankTableHtml += '        <tr style=" border: 1px solid #cccccc; " id="account-holder-row">';
+                bankTableHtml += '            <td style=" border: 1px solid #cccccc; "><strong>Account Holder:</strong></td>';
+                for (i = 0; i < bankAccountCount; i++) {
+
+                    var bankAccountHolder = $('input[name="group-a[' + i + '][bankHolder]"]').val();
+                    bankTableHtml += '<td style=" border: 1px solid #cccccc; ">' + bankAccountHolder + '</strong></td>';
+
+                }
+                bankTableHtml += '        </tr>';
+                //End Account Holder Row
+
+                //Start Account Number Row
+                bankTableHtml += '        <tr style=" border: 1px solid #cccccc; " id="account-number-row">';
+                bankTableHtml += '            <td style=" border: 1px solid #cccccc; "><strong>Account Number:</strong></td>';
+                for (i = 0; i < bankAccountCount; i++) {
+
+                    var bankAccountNumber = $('input[name="group-a[' + i + '][bankAcNumber]"]').val();
+                    bankTableHtml += '<td style=" border: 1px solid #cccccc; ">' + bankAccountNumber + '</strong></td>';
+
+                }
+                bankTableHtml += '        </tr>';
+                //End Account Number Row
+
+                // Start Bank Name Row
+                bankTableHtml += '        <tr style=" border: 1px solid #cccccc; " id="account-bank-row">';
+                bankTableHtml += '            <td style=" border: 1px solid #cccccc; "><strong>Bank:</strong></td>';
+                for (i = 0; i < bankAccountCount; i++) {
+
+                    var bankName = $('input[name="group-a[' + i + '][bankName]"]').val();
+                    bankTableHtml += '<td style=" border: 1px solid #cccccc; ">' + bankName + '</strong></td>';
+
+                }
+                bankTableHtml += '        </tr>';
+                // End Bank Name Row
+
+                // Start Branch Row
+                bankTableHtml += '        <tr style=" border: 1px solid #cccccc; " id="account-branch-row">';
+                bankTableHtml += '            <td style=" border: 1px solid #cccccc; "><strong>Branch:</strong></td>';
+                for (i = 0; i < bankAccountCount; i++) {
+
+                    var bankBranch = $('input[name="group-a[' + i + '][bankBranch]"]').val();
+                    bankTableHtml += '<td style=" border: 1px solid #cccccc; ">' + bankBranch + '</strong></td>';
+
+                }
+                bankTableHtml += '        </tr>';
+                // End Branch Row
+
+                // Start Bank IFSC
+                bankTableHtml += '        <tr style=" border: 1px solid #cccccc; " id="account-ifsc-row">';
+                bankTableHtml += '            <td style=" border: 1px solid #cccccc; "><strong>IFSC Code:</strong></td>';
+                for (i = 0; i < bankAccountCount; i++) {
+
+                    var bankIFSC = $('input[name="group-a[' + i + '][bankIFSC]"]').val();
+                    bankTableHtml += '<td style=" border: 1px solid #cccccc; ">' + bankIFSC + '</strong></td>';
+
+                }
+                bankTableHtml += '        </tr>';
+                // End Bank IFSC
+
+                bankTableHtml += '    </tbody>';
+                //End Table Body
+
+                bankTableHtml += '</table>';
+                //End HTML Table
+
+                //Set HTML Content of Bank Details Table
+                $('#bank-details-table-container').html(bankTableHtml);
+
+            } else {
+
+                $('#bank-details-table-container').empty();
+                console.log('remove bank details');
+            }
+
+        }
 
 
     </script>
