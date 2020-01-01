@@ -478,11 +478,16 @@
 
                     if (fieldID == 'compWeb1' || fieldID == "compWeb2") {
 
-                        $('#' + fieldID + 'Field').attr("href");
+                        $('#' + fieldID + 'Field').attr("href",'http://'+fieldValue);
+                        $('#' + fieldID + 'Field').text(fieldValue);
+
+                        console.log('web');
 
                     } else if (fieldID == "empMail") {
+                        console.log('mail');
 
                         $('#' + fieldID + 'Field').attr("href", "mailto:" + fieldValue);
+                        $('#' + fieldID + 'Field').text(fieldValue);
 
                     } else if (fieldID == 'compLogo') {
 
